@@ -67,10 +67,7 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue']
-      },
-      typescript: {} // 解析 TypeScript 模块
+      typescript: {}
     }
   }
 }
