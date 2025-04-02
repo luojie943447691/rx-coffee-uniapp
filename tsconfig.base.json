@@ -15,6 +15,7 @@
     "noImplicitThis": true,
 
     // Required in Vite
-    "isolatedModules": true
+    "isolatedModules": true,
+    "noEmit": true // 只检查不生成文件
   }
 }

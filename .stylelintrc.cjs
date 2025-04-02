@@ -42,6 +42,7 @@ module.exports = {
       }
     ],
     'comment-empty-line-before': 'never',
-    'declaration-property-value-no-unknown': null
+    'declaration-property-value-no-unknown': null,
+    'no-empty-source': null
   }
 }

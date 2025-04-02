@@ -4,6 +4,14 @@ module.exports = {
     es2021: true,
     node: true
   },
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    parser: '@typescript-eslint/parser',
+    project: './tsconfig.json', // TypeScript 项目路径
+    extraFileExtensions: ['.vue'] // 让 ESLint 识别 .vue 文件
+  },
   extends: [
     'eslint:recommended',
     'plugin:vue/vue3-essential',
@@ -13,7 +21,8 @@ module.exports = {
     'standard',
     // 1. 接入 prettier 的规则
     'prettier',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended'
   ],
   overrides: [
     {
@@ -23,6 +32,12 @@ module.exports = {
       files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
         sourceType: 'script'
+      }
+    },
+    {
+      files: ['vite.config.ts', 'unocss.config.ts', '*.js', '*.cjs'],
+      parserOptions: {
+        project: null // 让 ESLint 忽略 TS 项目设置
       }
     }
   ],
@@ -51,7 +66,10 @@ module.exports = {
     'no-use-before-define': 'off',
     'no-undef': 'off',
     'no-unused-vars': 'off',
-    'no-param-reassign': 'off'
+    'no-param-reassign': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    'promise/param-names': 'off',
+    'no-empty-source': 'off'
   },
   globals: {
     $t: true,
